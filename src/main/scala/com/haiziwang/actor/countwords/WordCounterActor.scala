@@ -1,4 +1,4 @@
-package com.haiziwang.actor
+package com.haiziwang.actor.countwords
 
 import akka.actor.{Actor, ActorRef, Props}
 
