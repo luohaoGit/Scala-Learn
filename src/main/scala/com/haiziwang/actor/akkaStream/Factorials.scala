@@ -32,7 +32,7 @@ object Factorials extends App {
   }
 
   Await.ready(factorials.map(_.toString)
-    .runWith(lineSink("temp/factorials2.txt")), 3 second)
+    .runWith(lineSink("factorials2.txt")), 3 second)
 
   system.terminate()
 }
