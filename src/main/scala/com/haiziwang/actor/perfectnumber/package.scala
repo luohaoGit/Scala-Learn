@@ -15,11 +15,11 @@ object test{
     val candidate = 33550300
     val size = 1000000
     val pages = (candidate.toDouble/size).ceil.toInt
-    var processed = 0;
-    var factorsSummer = 0;
+    var processed = 0
+    var factorsSummer = 0
     val system = ActorSystem("System")
 
-    for(i <-0 until pages){
+    for(i <- 0 until pages){
       val lower = i*size + 1
       val upper = candidate min(i+1)*size
 
