@@ -18,7 +18,7 @@ import scala.concurrent.{Await, Future}
 object Factorials extends App {
 
   implicit val system = ActorSystem("QuickStart")
-  implicit val materializer = ActorMaterializer()
+  implicit val materializer = ActorMaterializer()//执行时候的默认参数
 
   val source: Source[Int, NotUsed] = Source(1 to 100)
   source.runForeach(println)
@@ -27,10 +27,11 @@ object Factorials extends App {
 
   def lineSink(fileName: String): Sink[String, Future[IOResult]] = {
     Flow[String]
-      .map(num => ByteString(s"$num\n"))
-      .toMat(FileIO.toPath(Paths.get(fileName)))(Keep.right)
+      .map(num => ByteString(s"$num\n")) //s函数为StringContext的函数
+      .toMat(FileIO.toPath(Paths.get(fileName)))(Keep.right)//toMat连source和sink
   }
 
+  //执行runnableGraph
   Await.ready(factorials.map(_.toString)
     .runWith(lineSink("factorials2.txt")), 3 second)
 
