@@ -30,5 +30,6 @@ libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-http-jackson-experimental" % "2.4.10",
   "com.typesafe.akka" %% "akka-http-spray-json-experimental" % "2.4.10",
   "com.typesafe.akka" %% "akka-http-xml-experimental" % "2.4.10",
-  "com.typesafe.akka" %% "akka-persistence-query-experimental" % "2.4.10"
+  "com.typesafe.akka" %% "akka-persistence-query-experimental" % "2.4.10",
+  "com.typesafe.scala-logging" %% "scala-logging-slf4j" % "2.1.2"
 )
