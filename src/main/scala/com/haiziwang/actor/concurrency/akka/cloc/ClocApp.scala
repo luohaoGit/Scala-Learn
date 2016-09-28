@@ -10,4 +10,5 @@ object ClocApp extends App with StrictLogging {
   val system = ActorSystem("cloc")
   val collector = system.actorOf(Props[Collector],"collector")
   collector ! Collect(".")
+  system.terminate()
 }
